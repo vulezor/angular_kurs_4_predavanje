@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+    <thead>
+      <tr >
+        <th ng-repeat="($c, col) in cols">{{col.title}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="($r, row) in rows">
+        <td ng-repeat="($c, col) in cols">{{ callback!=null ? callback(row, col , $r) : row[col.field]}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<pre>{{cols | json}}</pre><br />
+<pre>{{rows | json}}</pre>
